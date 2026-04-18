@@ -1,0 +1,15 @@
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: sql_northwind_exercises
+    env_file: .env
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: northwind # Mudei para o nome do dataset
+    ports:
+      - "5433:5432" # Use 5433 se o banco do curso estiver ligado na 5432
+    volumes:
+      - ./postgres_data_northwind:/var/lib/postgresql/data
+      # O PULO DO GATO:
+      - ./northwind.sql:/docker-entrypoint-initdb.d/northwind.sql
