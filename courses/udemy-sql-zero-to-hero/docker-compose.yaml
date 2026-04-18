@@ -1,0 +1,14 @@
+services:
+  postgres-db:
+    image: postgres:15
+    container_name: sql_zero_to_hero_db
+    env_file: .env # Ele vai ler as variáveis do seu arquivo .env automaticamente
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: curso_sql_zero_to_hero
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+      - ./db_setup:/tmp/db_setup # Atalho para o arquivo do professor
