@@ -3,3 +3,5 @@ postgres_data/
 .env
 
 .vscode
+
+*.session.sql

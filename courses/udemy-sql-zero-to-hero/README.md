@@ -56,16 +56,26 @@ docker exec -it sql_zero_to_hero_db pg_restore -U seu_usuario -d curso_sql_zero_
 
 ```
 
+**OBS**: No lugar de "seu_usuario", coloque o usuario que você colocou no .env 
+
 ## 📊 Como Visualizar as Tabelas
 
 No VS Code, utilize a extensão SQLTools.
 
-Conecte-se ao localhost:5432 usando as credenciais do seu .env.
+Clique no icone de um database no canto inferior esquerdo escrito "Connect"
+e depois clique no "+" da janelinha que abrirá 
 
-As tabelas aparecerão no menu lateral prontas para consulta.
+Escolha o Postgres nas opções que irão aparecer e preencha os campos obrigatórios. Na prática, bastará colocar que a conexão é localhost e a porta é 5432.
+
+Depois disso, basta criar a conexão. Para se conectar, basta colocar a credencial que
+foi criada no .env
+
+Feito isso, será criado um arquivo *.session.sql e as tabelas aparecerão no menu lateral prontas para consulta.
 
 ## 📝 Notas de Estudo
 
-Persistência: Os dados são persistidos localmente na pasta postgres_data/. Mesmo ao destruir o container com docker-compose down, seu progresso não será perdido.
+**Desativar container**: Após o uso, utilize docker-compose down para desativar o container. Seu progresso não será perdido.
 
-Versionamento: A pasta postgres_data/ e o arquivo .env estão no .gitignore por segurança e performance.
+**Persistência**: Os dados são persistidos localmente na pasta postgres_data/. 
+
+**Versionamento**: A pasta postgres_data/ e o arquivo .env estão no .gitignore por segurança e performance.
