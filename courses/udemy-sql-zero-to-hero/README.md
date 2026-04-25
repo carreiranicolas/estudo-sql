@@ -74,8 +74,10 @@ Feito isso, será criado um arquivo *.session.sql e as tabelas aparecerão no me
 
 ## 📝 Notas de Estudo
 
-**Desativar container**: Após o uso, utilize docker-compose down para desativar o container. Seu progresso não será perdido.
+**Persistência**: Os dados são persistidos localmente na pasta postgres_data/.
 
-**Persistência**: Os dados são persistidos localmente na pasta postgres_data/. 
+**Desativar container**: Após o uso, utilize ```bash docker-compose down``` para desativar o container. Seu progresso não será perdido.
+
+**Próximos acessos**: Sempre quando for estudar novamente, basta rodar o ```bash docker-compose up -d ```, **NÃO PRECISA USAR O DOCKER EXEC**
 
 **Versionamento**: A pasta postgres_data/ e o arquivo .env estão no .gitignore por segurança e performance.
